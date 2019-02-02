@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ezreal47/OrangeCSS/issues"
   },
-  "homepage": "https://github.com/ezreal47/OrangeCSS#readme"
+  "homepage": "https://github.com/ezreal47/OrangeCSS#readme",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
 }
