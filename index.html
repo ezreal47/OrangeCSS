@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OrangeCSS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --button-height: 36px;
+      --font-size: 14px;
+      --button-bg: white;
+      --border-radius: 4px;
+      --color: #515a6e;
+      --border-color: #dcdee2;
+    }
+    body {
+      font-size: var(--font-size);
+    }
+    #app {
+      margin: 20px;
+    }
+  </style>
+  <style>
+    .icon { height: 1.2em; width: 1.2em; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <o-button>默认按钮</o-button>
+    <o-button type="primary">Primary</o-button>
+    <o-button type="success">Success</o-button>
+    <o-button type="error">Error</o-button>
+    <o-button icon="search">搜索按钮</o-button>
+    <o-button icon="download">下载按钮</o-button>
+    <o-button size="large">Large</o-button>
+    <o-button size="small">small</o-button>
+    <o-button :loading="true">Loading</o-button>
+  </div>
+  <script src="./src/app.js"></script>
+  <script src="//at.alicdn.com/t/font_1039323_jep6xmdiqe.js"></script>
+</body>
+</html>
