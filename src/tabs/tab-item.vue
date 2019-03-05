@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-item" :class="classes" @click="switchTab">
+  <div class="tab-item" :class="classes" @click="switchTab" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -16,38 +16,52 @@ export default {
     name: {
       type: String|Number,
       required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classes(){
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       }
     }
   },
   created(){
-    this.eventBus.$on('update:selected', (name) => {
+    if(this.eventBus) {
+      this.eventBus.$on('update:selected', (name) => {
       this.active = name === this.name
     })
+    }
   },
-  methods: {
+  methods: {   
     switchTab() {
-      this.eventBus.$emit('update:selected', this.name, this)
+      if(this.disabled){ return }
+      this.eventBus && this.eventBus.$emit('update:selected', this.name, this)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
   .tab-item {
+    color: #595959;
     flex-shrink: 0;
-    border: 1px solid red;
     padding: 0.8em 2em;
     cursor: pointer;
+    transition: all 0.5s;
     &:hover {
-      color: blue;
+      color: #40a9ff;
     }
     &.active {
-      background-color: red;
+      color: #1890ff;
+      font-weight: bold;
+    }
+    &.disabled {
+      color: #bfbfbf;
+      cursor: not-allowed;
     }
   }
 </style>

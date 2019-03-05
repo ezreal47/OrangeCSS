@@ -37,5 +37,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .tab {}
+  .tab {
+    max-width: 800px;
+  }
 </style>

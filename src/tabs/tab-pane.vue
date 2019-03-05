@@ -26,6 +26,8 @@ export default {
 </script>
 <style lang="scss" scoped>
   .tab-pane {
-    background-color: red;
+    min-height: 200px;
+    color: #fff;
+    background-color: #46a1de;
   }
 </style>

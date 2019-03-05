@@ -4,9 +4,7 @@
   </div>
 </template>
 <script>
-export default {
-  inject: ['eventBus']
-}
+export default {}
 </script>
 <style lang="scss" scoped>
   .tab-body {

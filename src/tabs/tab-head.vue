@@ -25,12 +25,12 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #bfbfbf;
     position: relative;
     > .line {
       position: absolute;
-      bottom: 0;
-      border-bottom: 2px solid blueviolet;
+      bottom: -1px;
+      border-bottom: 2px solid #1890ff;
       transition: all 0.5s;
     }  
   }
