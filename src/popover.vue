@@ -17,12 +17,20 @@ export default {
     }
   },
   mounted() {
-    if(this.trigger === 'click'){
+    if(this.trigger === 'click') {
       this.$refs.popover.addEventListener('click', this.onClick)
-    }else {
+    } else {
       this.$refs.popover.addEventListener('mouseenter', this.open)
       this.$refs.popover.addEventListener('mouseleave', this.close)
     }
+  },
+  beforeDestroy() {
+    if(this.trigger === 'click') {
+      this.$refs.popover.removeEventListener('click', this.onClick)
+      } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open);
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
+      }
   },
   props: {
     position: {

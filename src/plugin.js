@@ -14,7 +14,6 @@ export default {
         vm.$slots.default = [message]
         vm.$mount()
         document.body.appendChild(vm.$el)
-        console.log(vm.$props)
       },
 
       info(message){
@@ -30,7 +29,6 @@ export default {
         this.trigger('warning',message)
       }
       
-
     }
   }
 }
