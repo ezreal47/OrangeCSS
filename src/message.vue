@@ -1,19 +1,16 @@
 <template>
-  <div class="message">
-    <svg class="icon">
-      <use :xlink:href="`#icon-${typeName}`"></use>
-    </svg>
-    <slot></slot>
-  </div>  
+  <transition name="slide-message">
+    <div class="message">
+      <svg class="icon">
+        <use :xlink:href="`#icon-${typeName}`"></use>
+      </svg>
+      <slot></slot>
+    </div>
+  </transition>
 </template>
-<script>
 
+<script>
 export default {
-  data(){
-    return {
-      iconNames: ['info','success']
-    }
-  },
   props: {
     autoCloseDelay: {
       type: Number,
@@ -49,8 +46,8 @@ export default {
     text-align: center;
     display: flex;
     align-items: center;
-    
-    // justify-content: flex-end;
+    animation: slide-message 0.4s;
+    background: #fff;
     .icon {
       width: 18px;
       height: 18px;
@@ -58,4 +55,16 @@ export default {
       margin-right: 10px;
     }
   }
+
+  @keyframes slide-message {
+    0% {
+      transform: translate(-50%,-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%);
+      opacity: 1;
+    }
+  }
+ 
 </style>

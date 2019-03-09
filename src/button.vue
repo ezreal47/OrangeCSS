@@ -1,9 +1,9 @@
 <template>
-    <button class="o-button" :class="[size,type,icon,{loading}]" >
+    <button class="o-button" :class="[size,type,icon]" :loading="loading">
       <svg v-if="icon && !loading" class="icon">
         <use :xlink:href="`#icon-${icon}`"></use>
       </svg>
-      <svg v-if="loading" class="icon loading">
+      <svg v-if="loading" class="icon" :loading="loading">
         <use :xlink:href="`#icon-loading`"></use>
       </svg>
       <slot></slot>
@@ -43,10 +43,11 @@ export default {
   &.primary {background-color:#47b8e0; color: #fff; fill: #fff; border-color: #47b8e0; &:hover {background:lighten(#47b8e0,10%)}}
   &.success {background-color:#19be6b; color: #fff; fill: #fff; border-color: #19be6b;  &:hover {background:lighten(#19be6b,10%)}}
   &.error {background-color: #f94e3f; color: #fff; fill: #fff; border-color: #f94e3f; &:hover {background:lighten(#f94e3f,10%)}}
-  &.loading {background-color: lighten(#69b7ff,10%); color: #fff; fill: #fff;} 
+  &[loading] {background-color: lighten(#69b7ff,10%); color: #fff; fill: #fff;} 
+  &[loading]:hover {border-color: var(--border-color)}
   
   > .icon {margin-right: .4em}
-  > .loading {animation: spin 2s infinite linear;}
+  > [loading] {animation: spin 2s infinite linear;}
 }
 </style>
 

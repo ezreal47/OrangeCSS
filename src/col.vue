@@ -16,13 +16,14 @@ export default {
   computed: {
     colClass() {
       let {span, offset, order} = this;
-      return [span && `col-${span}`, offset && `offset-${offset}`, order]
+      return [span && `col-${span}`, offset && `offset-${offset}`]
     },
     gutterStyle() {
-      let {gutter} = this
+      let {gutter,order} = this
       return {
+        order,
         paddingLeft: gutter/2 + 'px',
-        paddingRigt: gutter/2 + 'px'
+        paddingRight: gutter/2 + 'px'
       }
     }
   }
