@@ -28,9 +28,7 @@ export default {
 
 </script>
 <style lang="scss" scoped>
-.carousel-item {
-  // display: inline-block; 
-}
+.carousel-item {}
 .carousel-leave-active {
   position: absolute;
   left: 0;
