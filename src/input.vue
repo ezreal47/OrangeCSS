@@ -50,6 +50,9 @@ export default {
     add(e) {
       e.preventDefault()
       document.querySelector(".search-form").classList.toggle("active")
+    },
+    name() {
+      consoel.log('组建内')
     }
   }
 }

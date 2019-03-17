@@ -17,6 +17,7 @@ export default {
       },
 
       info(message){
+        console.log('aaa')
         this.trigger('info',message)
       },
       success(message){
@@ -28,7 +29,7 @@ export default {
       warning(message){
         this.trigger('warning',message)
       }
-      
+    
     }
   }
 }

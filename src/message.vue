@@ -42,7 +42,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     padding: 8px 18px;
-    box-shadow: 1px 3px 20px -6px rgba(0,0,0,0.61);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     text-align: center;
     display: flex;
     align-items: center;
